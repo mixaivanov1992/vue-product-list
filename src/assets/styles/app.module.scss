@@ -1,0 +1,50 @@
+
+@use "core";
+.wrapper{
+    width: 70%;
+}
+#preloader {
+	background-color:core.$color4;
+	height:100%;
+	left:0;
+	opacity:1;
+	position:fixed;
+	top:0;
+	width:100%;
+	z-index:999;
+    > div {
+        left:50%;
+        position:absolute;
+        top:50%;
+        transform:translate(-50%, -50%);
+        width:70px;
+        > div {
+            animation:bouncedelay 1.4s infinite ease-in-out;
+            animation-fill-mode:both;
+            background-color:core.$color8;
+            border-radius:100%;
+            display:inline-block;
+            height:18px;
+            width:18px;
+        }
+        #preloaderBounce1 {
+            animation-delay:-0.32s!important
+        }
+        #preloaderBounce2 {
+            animation-delay:-0.16s!important
+        }
+    }
+}
+@keyframes bouncedelay {
+	0%, 80%, 100% {
+		transform:scale(0.0)
+	} 40% {
+		transform:scale(1.0)
+	}
+}
+@media screen and (max-width: 600px) {
+    .wrapper {
+        width: 100%;
+    }
+}
+

@@ -1,0 +1,99 @@
+@use "core";
+.productItem{
+    display: flex;
+    flex-wrap: wrap;
+    .item{
+        position: relative;
+        margin-top: 16px;
+        margin-left: 16px;
+        width: calc(20% - 18px);
+        background: core.$color4;
+        box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04), 0px 6px 10px rgba(0, 0, 0, 0.02);
+        border-radius: 4px;
+        transition: 0.3s;
+        cursor: pointer;
+        border: 1px solid transparent;
+        .remove{
+            transition: 0.3s;
+            top: -10px;
+            right: -10px;
+            position: absolute;
+            width: 32px;
+            height: 32px;
+        }
+        .img{
+            height: 200px;
+            width: 100%;
+            border-radius: 4px 4px 0px 0px;
+        }
+        .name{
+            @include core.SourceSansPro600;
+            font-size: 20px;
+            color: core.$color5;
+            margin: 16px
+        }
+        .description{
+            @include core.SourceSansPro400;
+            font-size: 16px;
+            color: core.$color5;
+            margin: 16px
+        }
+
+        .price{
+            @include core.SourceSansPro600;
+            font-size: 24px;
+            margin: 32px 16px 24px;
+        }
+    }
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+    .productItem {
+        .item{
+            .remove{
+                display: none;
+            }
+            &:hover{
+                border: 1px solid core.$color3;
+                scale: 1.02;
+                .remove{
+                    display: block;
+                    &:hover{
+                        scale: 1.5;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 2000px) {
+    .productItem {
+        .item {
+            width: calc(25% - 18px);
+        }
+    }
+}
+@media screen and (max-width: 1300px) {
+    .productItem {
+        .item {
+            width: calc(33.3% - 18px);
+        }
+    }
+}
+@media screen and (max-width: 900px) {
+    .productItem {
+        .item {
+            width: calc(50% - 18px);
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    .productItem {
+        .item {
+            width: 100%;
+            margin-left: 0px;
+        }
+    }
+}

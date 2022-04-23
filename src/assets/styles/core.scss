@@ -1,0 +1,20 @@
+@mixin SourceSansPro400 {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+}
+@mixin SourceSansPro600 {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+}
+
+$color1:rgba(255, 254, 251, 0.8);
+$color2:#49485E;
+$color3:#B4B4B4;
+$color4:#FFFEFB;
+$color5:#3F3F3F;
+$color6:#FF8484;
+$color7:#EEEEEE;
+$color8:#7BAE73;
+$color9:#FFFFFF;

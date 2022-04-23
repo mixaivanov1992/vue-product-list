@@ -1,0 +1,37 @@
+@use "core";
+html{
+    box-sizing: border-box;
+}
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+.productList-leave-to,
+.productList-enter-from{
+    opacity: 0;
+    transform: scale(0.5);
+}
+.productList-leave-from,
+.productList-enter-to{
+    opacity: 0;
+    transform: scale(1);
+}
+#app{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: core.$color1;
+    padding: 32px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.warning-text{
+    @include core.SourceSansPro400;
+    font-size: 8px;
+    color: core.$color6;
+    position: absolute;
+    bottom: -11px;
+    left: 0;
+}
+.warning-border{
+    border: 1px solid core.$color6 !important;
+}
