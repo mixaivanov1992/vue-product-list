@@ -39,8 +39,32 @@ export default {
             isLoading: true,
         };
     },
+    beforeMount() {
+        if (localStorage.getItem("state") !== null) {
+            console.log(localStorage.getItem("state"));
+            const { products, sort } = JSON.parse(
+                localStorage.getItem("state")
+            );
+            this.state.products = products;
+            this.state.sort = sort;
+        }
+    },
     mounted() {
         this.isLoading = false;
+    },
+    watch: {
+        "state.products": {
+            handler: function () {
+                localStorage.setItem("state", JSON.stringify(this.state));
+            },
+            deep: true,
+        },
+        "state.sort": {
+            handler: function () {
+                localStorage.setItem("state", JSON.stringify(this.state));
+            },
+            deep: true,
+        },
     },
     methods: {
         sortProducts() {
