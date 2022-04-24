@@ -3,6 +3,8 @@
     display: flex;
     flex-wrap: wrap;
     .item{
+        display: flex;
+        flex-direction: column;
         position: relative;
         margin-top: 16px;
         margin-left: 16px;
@@ -36,7 +38,8 @@
             @include core.SourceSansPro400;
             font-size: 16px;
             color: core.$color5;
-            margin: 16px
+            margin: 16px;
+            flex: 1;
         }
 
         .price{

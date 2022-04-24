@@ -41,7 +41,6 @@ export default {
     },
     beforeMount() {
         if (localStorage.getItem("state") !== null) {
-            console.log(localStorage.getItem("state"));
             const { products, sort } = JSON.parse(
                 localStorage.getItem("state")
             );
